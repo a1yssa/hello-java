@@ -19,6 +19,6 @@ class ArrayBalancerTest {
         assertTrue(arrayBalancer.canBalance(new int[]{5, 1, 1, 7}));
         assertTrue(arrayBalancer.canBalance(new int[]{5, 3, 3, 2, 9}));
         assertTrue(arrayBalancer.canBalance(new int[]{5, 3, 3, 1, 1, 2, 9}));
-        assertFalse(arrayBalancer.canBalance(new int[]{1, 2, 3, 4, 5, 2, 4, 6, 8}));
+        assertFalse(arrayBalancer.canBalance(new int[]{1000, 2, 3, 4, 5, 2, 4, 6, 8}));
     }
 }
