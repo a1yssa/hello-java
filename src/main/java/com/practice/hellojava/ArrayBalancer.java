@@ -15,12 +15,19 @@ public class ArrayBalancer {
             sum = sum + j;
         }
 
+        if (sum%2 == 1 || arr.length < 2) {
+            return false;
+        }
+
         for (int j : arr) {
             left = left + j;
-            if (left == (sum - j)) {
+            if (left == (sum/2)) {
                 return true;
             }
-            sum = sum - j;
+
+            if (left > sum/2){
+                return false;
+            }
         }
         return false;
     }
