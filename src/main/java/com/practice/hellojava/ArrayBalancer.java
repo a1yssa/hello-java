@@ -7,16 +7,19 @@ package com.practice.hellojava;
 // canBalance([2, 1, 1, 2, 1]) → false
 // canBalance([3, 1, 1, 1]) → true
 
+import java.util.Arrays;
+
 public class ArrayBalancer {
     public boolean canBalance(int[] arr) {
-        int left = 0;
-        int sum = 0;
-        for (int j : arr) sum = sum + j;
+        if (arr.length < 2) return false;
 
-        if (sum%2 == 1 || arr.length < 2) return false;
+        int sum = Arrays.stream(arr).sum();
+        if (sum % 2 == 1) return false;
+
+        int left = 0;
         for (int j : arr) {
-            left = left + j;
-            if (left == (sum/2)) return true;
+            left += j;
+            if (left == sum/2) return true;
             if (left > sum/2) return false;
         }
         return false;
