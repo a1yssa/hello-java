@@ -11,23 +11,13 @@ public class ArrayBalancer {
     public boolean canBalance(int[] arr) {
         int left = 0;
         int sum = 0;
-        for (int j : arr) {
-            sum = sum + j;
-        }
+        for (int j : arr) sum = sum + j;
 
-        if (sum%2 == 1 || arr.length < 2) {
-            return false;
-        }
-
+        if (sum%2 == 1 || arr.length < 2) return false;
         for (int j : arr) {
             left = left + j;
-            if (left == (sum/2)) {
-                return true;
-            }
-
-            if (left > sum/2){
-                return false;
-            }
+            if (left == (sum/2)) return true;
+            if (left > sum/2) return false;
         }
         return false;
     }
