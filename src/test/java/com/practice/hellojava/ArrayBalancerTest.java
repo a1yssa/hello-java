@@ -10,8 +10,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class ArrayBalancerTest {
     private final ArrayBalancer arrayBalancer = new ArrayBalancer();
 
-    int[] setArray(int size){
-        int [] arr = new int[size];
+     private int[] setArray(){
+        int [] arr = new int[1000000];
         Arrays.fill(arr, 1);
         return arr;
     }
@@ -32,9 +32,9 @@ class ArrayBalancerTest {
         assertFalse(arrayBalancer.canBalance(new int[]{1000, 2, 3, 4, 5, 2, 4, 6, 8}));
 
         assertTrue(arrayBalancer.canBalance(new int[1000000])); //1000000 elements of 0
-        assertTrue(arrayBalancer.canBalance(setArray(1000000))); //1000000 elements of 1
+        assertTrue(arrayBalancer.canBalance(setArray())); //1000000 elements of 1
 
-        int[] arr = setArray(1000000);
+        int[] arr = setArray();
         arr[arr.length-1] = 2;
         assertFalse(arrayBalancer.canBalance(arr)); //1000000 elements, last element 2
     }
